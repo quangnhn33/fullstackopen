@@ -1,0 +1,62 @@
+[
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "url": "https://www.example.com/greatgatsby",
+        "likes": 1000
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "url": "https://www.example.com/tokillamockingbird",
+        "likes": 1500
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "url": "https://www.example.com/1984",
+        "likes": 2000
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "url": "https://www.example.com/catcherintherye",
+        "likes": 800
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "url": "https://www.example.com/prideandprejudice",
+        "likes": 1200
+    },
+    {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "url": "https://www.example.com/thehobbit",
+        "likes": 1800
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "url": "https://www.example.com/thelordoftherings",
+        "likes": 2500
+    },
+    {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "url": "https://www.example.com/harrypotter",
+        "likes": 3000
+    },
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "url": "https://www.example.com/thealchemist",
+        "likes": 700
+    },
+    {
+        "title": "The Great Expectations",
+        "author": "Charles Dickens",
+        "url": "https://www.example.com/greatexpectations",
+        "likes": 2200
+    }
+]
