@@ -1,16 +1,28 @@
 import { useSelector, useDispatch } from "react-redux"
-import { voteAction } from "../reducers/anecdoteReducer"
+import { vote } from "../reducers/anecdoteReducer"
+import { setMessage, removeMessage } from "../reducers/messageReducer"
+import { useState } from "react"
 
 const AnnecdoteList = () => {
+  const [timeOutId, setTimeOutId] = useState(null)
   const anecdotes = useSelector(state => {
     if (state.filter === "") {
-      return state.anecdotes
+      return [...state.anecdotes].sort((a, b) => b.votes - a.votes)
     }
-    return state.anecdotes.filter(anecdote => anecdote.content.includes(state.filter))
+    return state.anecdotes.filter(anecdote => anecdote.content.includes(state.filter)).sort((a, b) => b.votes - a.votes)
   })
   const dispatch = useDispatch()
-  const vote = (id) => {
-    dispatch(voteAction(id))
+  const handleVote = (id) => {
+    dispatch(vote(id))
+    dispatch(setMessage(`You voted for '${anecdotes.find(anecdote => anecdote.id === id).content}'`))
+    if (timeOutId) {
+      clearTimeout(timeOutId)
+    }
+    const newTimeOutId = setTimeout(() => {
+      dispatch(removeMessage())
+      setTimeOutId(null)
+    }, 5000)
+    setTimeOutId(newTimeOutId)
   }
   return (
     <div>
@@ -21,7 +33,7 @@ const AnnecdoteList = () => {
           </div>
           <div>
             has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id)}>vote</button>
+            <button onClick={() => handleVote(anecdote.id)}>vote</button>
           </div>
         </div>
       )}
